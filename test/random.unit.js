@@ -308,6 +308,12 @@ describe("random.js", function () {
       assert.ok(typeof randomNumber === 'number');
     });
 
+    it("throws and error when attempting to seed() with 0", function(){
+      assert.throws(function() {
+        mersenne.seed(0);
+      }, Error);
+    });
+
     it("throws an error when attempting to seed() a non-integer", function() {
       assert.throws(function () {
         mersenne.seed('abc');

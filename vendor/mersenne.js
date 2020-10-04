@@ -271,7 +271,7 @@ exports.rand = function(max, min) {
     return Math.floor(gen.genrand_real2() * (max - min) + min);
 }
 exports.seed = function(S) {
-    if (typeof(S) != 'number')
+    if (typeof(S) != 'number' || Number(S) === 0)
         {
         throw new Error("seed(S) must take numeric argument; is " + typeof(S));
         }
